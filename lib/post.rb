@@ -3,9 +3,10 @@ require "pry"
 class Post
   attr_accessor :title, :author
   @@all = []
-  def initialize(title)
+  def initialize(title, author = nil)
     @title = title
-    @@all << @title
+    @author = author
+    @@all << self
   end
 
   def self.all
@@ -13,6 +14,11 @@ class Post
   end
 
   def author_name
+    if self.author
+      self.author.name
+    else
+      nil
+    end
 
   end
 end
