@@ -4,7 +4,6 @@ class Post
   attr_accessor :title, :author
   @@all = []
   def initialize(title)
-    binding.pry
     @title = title
     @@all << @title
   end
